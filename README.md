@@ -135,3 +135,43 @@ sudo pip3.6 install pyyaml
         }
     }
 
+## Ansible debug output
+
+    $ ansible all -m debug -a "msg={{ ansible_host }}"
+    haproxy011 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.14"
+    }
+    haproxy001 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.5"
+    }
+    webserver001 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.1"
+    }
+    webserver002 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.2"
+    }
+    webserver003 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.3"
+    }
+    webserver004 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.4"
+    }
+    webserver012 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.12"
+    }
+    webserver011 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.11"
+    }
+    webserver013 | SUCCESS => {
+        "changed": false,
+        "msg": "192.168.0.13"
+    }
+

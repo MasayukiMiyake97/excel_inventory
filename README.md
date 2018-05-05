@@ -6,6 +6,8 @@ sudo yum install python36u python36u-libs python36u-devel python36u-pip
 sudo pip3.6 install openpyxl  
 sudo pip3.6 install pyyaml
 
+# OUTPUT
+
     $ ./excel_inventory.py | python -m json.tool
     {
         "_meta": {

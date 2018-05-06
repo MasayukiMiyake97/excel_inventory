@@ -149,8 +149,11 @@ def make_hostvars(inv_dataset):
 
         ret[host_name] = host_info
 
+    # customize
+    customized_dataset = customize_hostvars(dataset)
+
     # append host value
-    for key, host_info_list in dataset.items():
+    for key, host_info_list in customized_dataset.items():
 
         for host_info in host_info_list:
             host_name = host_info.pop('host_name', None)
@@ -247,6 +250,18 @@ def make_inventory(group_tree, groupvars, group_hostnames, hostvars):
     ret['_meta'] = {'hostvars': hostvars}        
 
     return ret
+
+
+def customize_hostvars(inv_dataset):
+    """
+    customize hostvars.
+
+    :param dict inv_dataset: inventory data set.
+    :rtype: dict
+    :return: customized inventory data set.
+    """ 
+
+    return inv_dataset
 
 
 def customize_process(group_tree, groupvars, group_hostnames, hostvars, specific_vars):
